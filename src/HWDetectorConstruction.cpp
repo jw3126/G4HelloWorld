@@ -1,7 +1,7 @@
 #include "G4Box.hh"
 #include "G4Material.hh"
 #include "G4NistManager.hh"
-#include "../include/HWDetectorConstruction.h"
+#include "HWDetectorConstruction.h"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"

@@ -1,4 +1,4 @@
-#include "../include/HWActionInitialization.h"
+#include "HWActionInitialization.h"
 
 HWActionInitialization::HWActionInitialization() : G4VUserActionInitialization(){}
 HWActionInitialization::~HWActionInitialization() {}

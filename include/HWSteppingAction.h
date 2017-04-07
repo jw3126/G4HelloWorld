@@ -13,9 +13,6 @@ public:
     HWSteppingAction();
     ~HWSteppingAction();
     virtual void UserSteppingAction(const G4Step* step);
-
-
-
 };
 
 

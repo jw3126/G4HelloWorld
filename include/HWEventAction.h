@@ -12,9 +12,6 @@ public:
     ~HWEventAction();
     virtual void BeginOfEventAction(const G4Event* );
     virtual void EndOfEventAction(const G4Event* );
-
-
-
 };
 
 

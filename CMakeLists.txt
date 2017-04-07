@@ -4,7 +4,12 @@ set(CMAKE_CXX_STANDARD 14)
 
 
 find_package(Geant4 REQUIRED ui_all vis_all)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
 include(${Geant4_USE_FILE})
+
+file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cpp)
+file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.h)
 
 # copy macro file for visualization init
 configure_file(${PROJECT_SOURCE_DIR}/init.mac
@@ -12,6 +17,6 @@ configure_file(${PROJECT_SOURCE_DIR}/init.mac
         COPYONLY
         )
 
-set(SOURCE_FILES main.cpp include/HWDetectorConstruction.h include/HWActionInitialization.h include/HWPrimaryGeneratorAction.h src/HWDetectorConstruction.cpp include/HWSteppingAction.h include/HWEventAction.h include/HWRunAction.h src/HWActionInitialization.cpp src/HWEventAction.cpp src/HWPrimaryGeneratorAction.cpp src/HWRunAction.cpp src/HWSteppingAction.cpp)
-add_executable(G4HelloWorld ${SOURCE_FILES})
+
+add_executable(G4HelloWorld main.cpp ${sources} ${headers})
 target_link_libraries(G4HelloWorld ${Geant4_LIBRARIES})

@@ -9,11 +9,7 @@ class HWDetectorConstruction: public G4VUserDetectorConstruction {
 public:
     HWDetectorConstruction(): G4VUserDetectorConstruction() {};
     ~HWDetectorConstruction(){};
-
     virtual G4VPhysicalVolume* Construct();
-
-
-
 };
 
 

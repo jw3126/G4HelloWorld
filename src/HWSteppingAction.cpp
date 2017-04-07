@@ -1,4 +1,4 @@
-#include "../include/HWSteppingAction.h"
+#include "HWSteppingAction.h"
 
 HWSteppingAction::HWSteppingAction(): G4UserSteppingAction(){}
 

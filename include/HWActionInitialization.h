@@ -11,12 +11,7 @@ class HWActionInitialization: public G4VUserActionInitialization {
 public:
     HWActionInitialization() ;
     virtual ~HWActionInitialization();
-
-
     virtual void Build() const;
-
-
-
 };
 
 

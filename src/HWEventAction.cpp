@@ -1,4 +1,4 @@
-#include "../include/HWEventAction.h"
+#include "HWEventAction.h"
 
 HWEventAction::HWEventAction():G4UserEventAction() {}
 HWEventAction::~HWEventAction() {}

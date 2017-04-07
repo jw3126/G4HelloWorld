@@ -1,5 +1,5 @@
 #include <G4ios.hh>
-#include "../include/HWRunAction.h"
+#include "HWRunAction.h"
 
 HWRunAction::HWRunAction(): G4UserRunAction(){}
 

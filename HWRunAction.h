@@ -12,7 +12,7 @@
 class HWRunAction : public G4UserRunAction{
 
 public:
-    HWRunAction(){};
+    HWRunAction():G4UserRunAction(){};
     virtual ~HWRunAction(){};
     virtual void BeginOfRunAction(const G4Run* ){
         G4cout << "Run begins" << G4endl;

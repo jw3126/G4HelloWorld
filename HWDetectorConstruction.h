@@ -11,7 +11,8 @@
 class HWDetectorConstruction: public G4VUserDetectorConstruction {
 
 public:
-    HWDetectorConstruction(){};
+    HWDetectorConstruction(): G4VUserDetectorConstruction(),
+    fScoringVolume() {};
     ~HWDetectorConstruction(){};
 
     virtual G4VPhysicalVolume* Construct();

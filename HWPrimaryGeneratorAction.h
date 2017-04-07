@@ -5,26 +5,30 @@
 #ifndef G4HELLOWORLD_HWPRIMARYGENERATORACTION_H
 #define G4HELLOWORLD_HWPRIMARYGENERATORACTION_H
 
+// don't use the SI Units header file!
 
-#include <G4VUserPrimaryGeneratorAction.hh>
-#include <G4ParticleGun.hh>
-#include <G4SIunits.hh>
+#include "G4VUserPrimaryGeneratorAction.hh"
+#include "G4ParticleGun.hh"
+
+#include "globals.hh"
+#include "G4RunManager.hh"
+#include "G4SystemOfUnits.hh"
 
 class HWPrimaryGeneratorAction: public G4VUserPrimaryGeneratorAction {
 
 public:
-    HWPrimaryGeneratorAction() {
-        G4int n_particle = 3;
+    HWPrimaryGeneratorAction(): G4VUserPrimaryGeneratorAction(){
+        G4int n_particle = 1;
         fParticleGun = new G4ParticleGun(n_particle);
 
         G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
         G4ParticleDefinition* gamma = particleTable -> FindParticle("gamma");
 
-        G4ParticleMomentum momentumDirection = G4ParticleMomentum(0,0,1);
-        G4ThreeVector position = G4ThreeVector(1*cm, 2*cm, 3*cm);
+        G4ParticleMomentum momentumDirection = G4ParticleMomentum(1,0,0);
+        G4ThreeVector position = G4ThreeVector(-1*m, 0, 0);
 
-        fParticleGun->SetParticleEnergy(60*MeV);
         fParticleGun->SetParticleDefinition(gamma);
+        fParticleGun->SetParticleEnergy(7*MeV);
         fParticleGun->SetParticleMomentumDirection(momentumDirection);
         fParticleGun->SetParticlePosition(position);
     }

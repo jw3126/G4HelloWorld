@@ -17,10 +17,10 @@ public:
     ~HWActionInitialization() {}
     void Build() const {
 
-        SetUserAction(new HWPrimaryGeneratorAction());
-        SetUserAction(new HWEventAction());
-        SetUserAction(new HWSteppingAction());
-        SetUserAction(new HWRunAction());
+        SetUserAction(new HWPrimaryGeneratorAction);
+        SetUserAction(new HWEventAction);
+        SetUserAction(new HWSteppingAction);
+        SetUserAction(new HWRunAction);
 
     }
 };

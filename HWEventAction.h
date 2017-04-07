@@ -12,7 +12,7 @@
 class HWEventAction : public G4UserEventAction{
 
 public:
-    HWEventAction() {}
+    HWEventAction():G4UserEventAction() {}
     ~HWEventAction() {}
 
     virtual void BeginOfEventAction(const G4Event* ){

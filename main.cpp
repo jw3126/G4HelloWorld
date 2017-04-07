@@ -1,6 +1,5 @@
 #include <G4VModularPhysicsList.hh>
 #include <QBBC.hh>
-#include <QGSP_BERT_HP.hh>
 
 #include "HWActionInitialization.h"
 #include "HWDetectorConstruction.h"
@@ -9,16 +8,22 @@
 
 
 int main() {
+    G4Random::setTheEngine(new CLHEP::RanecuEngine);
 
     G4RunManager* runManager = new G4RunManager;  // what is there a difference between G4RunManager() and G4RunManager?
 
-
-    runManager->SetUserInitialization(new QGSP_BERT_HP); // physics list must be set before PrimaryActionGenerator
     runManager->SetUserInitialization(new HWDetectorConstruction());
+
+    // Physics list
+    G4VModularPhysicsList* physicsList = new QBBC;
+    physicsList->SetVerboseLevel(1);
+    runManager->SetUserInitialization(physicsList);
+
     runManager->SetUserInitialization(new HWActionInitialization());
 
+
     runManager->Initialize();
-    runManager->BeamOn(1);
+    runManager->BeamOn(10);
 
     delete runManager;
 

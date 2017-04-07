@@ -7,6 +7,8 @@
 
 #include <G4VUserActionInitialization.hh>
 #include "HWPrimaryGeneratorAction.h"
+#include "HWEventAction.h"
+#include "HWSteppingAction.h"
 
 class HWActionInitialization: public G4VUserActionInitialization {
 
@@ -14,7 +16,12 @@ public:
     HWActionInitialization() : G4VUserActionInitialization(){}
     ~HWActionInitialization() {}
     void Build() const {
+
         SetUserAction(new HWPrimaryGeneratorAction());
+        SetUserAction(new HWEventAction());
+        SetUserAction(new HWSteppingAction());
+        SetUserAction(new HWRunAction());
+
     }
 };
 

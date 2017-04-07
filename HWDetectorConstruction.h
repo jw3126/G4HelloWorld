@@ -17,6 +17,10 @@ public:
     virtual G4VPhysicalVolume* Construct();
 //    virtual void ConstructSDandField() {};
 
+private:
+    G4LogicalVolume* fScoringVolume;
+
+
 };
 
 

@@ -1,6 +1,7 @@
 //
 // Created by admin on 4/6/17.
 //
+#include <G4SIunits.hh>
 #include "G4Box.hh"
 #include "G4Material.hh"
 #include "G4NistManager.hh"
@@ -16,13 +17,16 @@ G4VPhysicalVolume* HWDetectorConstruction::Construct() {
     G4NistManager* nist = G4NistManager::Instance();
     G4Material* mediumWorld = nist -> FindOrBuildMaterial("G4_WATER");
 
-    // geometry
-    G4double x = 1.;
-    G4double y = 2.;
-    G4double z = 3.;
+    // logical geometry
+    G4double x = 10.*m;
+    G4double y = 20.*m;
+    G4double z = 30.*m;
     G4Box* solidWorld = new G4Box("solidWorld", x,y,z);
     G4LogicalVolume* logicalWorld = new G4LogicalVolume(solidWorld, mediumWorld, "logicalWorld");
 
+    fScoringVolume = logicalWorld;
+
+    // physical geometry
     G4RotationMatrix* pRot = NULL;
     const G4ThreeVector& tlate = G4ThreeVector();
     G4LogicalVolume* pCurrentLogical = logicalWorld;

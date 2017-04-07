@@ -14,7 +14,7 @@ class HWPrimaryGeneratorAction: public G4VUserPrimaryGeneratorAction {
 
 public:
     HWPrimaryGeneratorAction() {
-        G4int n_particle = 100;
+        G4int n_particle = 3;
         fParticleGun = new G4ParticleGun(n_particle);
 
         G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
@@ -23,7 +23,7 @@ public:
         G4ParticleMomentum momentumDirection = G4ParticleMomentum(0,0,1);
         G4ThreeVector position = G4ThreeVector(1*cm, 2*cm, 3*cm);
 
-        fParticleGun->SetParticleEnergy(6*MeV);
+        fParticleGun->SetParticleEnergy(60*MeV);
         fParticleGun->SetParticleDefinition(gamma);
         fParticleGun->SetParticleMomentumDirection(momentumDirection);
         fParticleGun->SetParticlePosition(position);

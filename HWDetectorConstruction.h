@@ -11,15 +11,11 @@
 class HWDetectorConstruction: public G4VUserDetectorConstruction {
 
 public:
-    HWDetectorConstruction(): G4VUserDetectorConstruction(),
-    fScoringVolume() {};
+    HWDetectorConstruction(): G4VUserDetectorConstruction() {};
     ~HWDetectorConstruction(){};
 
     virtual G4VPhysicalVolume* Construct();
-//    virtual void ConstructSDandField() {};
 
-private:
-    G4LogicalVolume* fScoringVolume;
 
 
 };

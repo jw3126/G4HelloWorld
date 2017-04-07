@@ -19,7 +19,7 @@ G4VPhysicalVolume* HWDetectorConstruction::Construct() {
     G4Material* mediumPhantom = nist -> FindOrBuildMaterial("G4_WATER");
 
     // logical geometry
-    G4Box* solidWorld = new G4Box("solidWorld", 1*km, 2*m, 3*m);
+    G4Box* solidWorld = new G4Box("solidWorld", 1*m, 2*m, 3*m);
     G4LogicalVolume* logicalWorld = new G4LogicalVolume(solidWorld, mediumWorld, "logicalWorld");
 
     // physical geometry

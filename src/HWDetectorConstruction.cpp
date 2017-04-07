@@ -1,10 +1,7 @@
-//
-// Created by admin on 4/6/17.
-//
 #include "G4Box.hh"
 #include "G4Material.hh"
 #include "G4NistManager.hh"
-#include "HWDetectorConstruction.h"
+#include "../include/HWDetectorConstruction.h"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"

@@ -1,8 +1,4 @@
-//
-// Created by jan on 07.04.17.
-//
-
-#include "HWSteppingAction.h"
+#include "../include/HWSteppingAction.h"
 
 HWSteppingAction::HWSteppingAction(): G4UserSteppingAction(){}
 

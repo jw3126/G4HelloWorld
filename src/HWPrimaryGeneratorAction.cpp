@@ -1,8 +1,4 @@
-//
-// Created by jan on 07.04.17.
-//
-
-#include "HWPrimaryGeneratorAction.h"
+#include "../include/HWPrimaryGeneratorAction.h"
 
 HWPrimaryGeneratorAction::HWPrimaryGeneratorAction() : G4VUserPrimaryGeneratorAction(){
     G4int n_particle = 1;

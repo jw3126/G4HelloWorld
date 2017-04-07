@@ -5,8 +5,8 @@
 #include <G4UImanager.hh>
 #include <G4UIExecutive.hh>
 
-#include "HWActionInitialization.h"
-#include "HWDetectorConstruction.h"
+#include "include/HWActionInitialization.h"
+#include "include/HWDetectorConstruction.h"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"

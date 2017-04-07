@@ -1,7 +1,3 @@
-//
-// Created by admin on 4/7/17.
-//
-
 #ifndef G4HELLOWORLD_HWSTEPPINGACTION_H
 #define G4HELLOWORLD_HWSTEPPINGACTION_H
 

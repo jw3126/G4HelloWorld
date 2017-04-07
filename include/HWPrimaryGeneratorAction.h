@@ -1,11 +1,6 @@
-//
-// Created by admin on 4/6/17.
-//
-
 #ifndef G4HELLOWORLD_HWPRIMARYGENERATORACTION_H
 #define G4HELLOWORLD_HWPRIMARYGENERATORACTION_H
 
-// don't use the SI Units header file!
 
 #include <G4ParticleTable.hh>
 #include "G4VUserPrimaryGeneratorAction.hh"

@@ -1,7 +1,4 @@
-//
-// Created by jan on 07.04.17.
-//
-#include "HWActionInitialization.h"
+#include "../include/HWActionInitialization.h"
 
 HWActionInitialization::HWActionInitialization() : G4VUserActionInitialization(){}
 HWActionInitialization::~HWActionInitialization() {}

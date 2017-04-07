@@ -1,9 +1,5 @@
-//
-// Created by jan on 07.04.17.
-//
-
 #include <G4ios.hh>
-#include "HWRunAction.h"
+#include "../include/HWRunAction.h"
 
 HWRunAction::HWRunAction(): G4UserRunAction(){}
 

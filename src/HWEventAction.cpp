@@ -1,8 +1,4 @@
-//
-// Created by jan on 07.04.17.
-//
-
-#include "HWEventAction.h"
+#include "../include/HWEventAction.h"
 
 HWEventAction::HWEventAction():G4UserEventAction() {}
 HWEventAction::~HWEventAction() {}

@@ -12,6 +12,6 @@ configure_file(${PROJECT_SOURCE_DIR}/init.mac
         COPYONLY
         )
 
-set(SOURCE_FILES main.cpp HWDetectorConstruction.h HWActionInitialization.h HWPrimaryGeneratorAction.h HWDetectorConstruction.cpp HWSteppingAction.h HWEventAction.h HWRunAction.h)
+set(SOURCE_FILES main.cpp HWDetectorConstruction.h HWActionInitialization.h HWPrimaryGeneratorAction.h HWDetectorConstruction.cpp HWSteppingAction.h HWEventAction.h HWRunAction.h HWActionInitialization.cpp HWEventAction.cpp HWPrimaryGeneratorAction.cpp HWRunAction.cpp HWSteppingAction.cpp)
 add_executable(G4HelloWorld ${SOURCE_FILES})
 target_link_libraries(G4HelloWorld ${Geant4_LIBRARIES})

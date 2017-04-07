@@ -9,8 +9,6 @@
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
 
-#include "G4RunManager.hh"
-
 G4VPhysicalVolume* HWDetectorConstruction::Construct() {
 
     // materials

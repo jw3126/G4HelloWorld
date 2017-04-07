@@ -8,38 +8,53 @@
 #include "HWActionInitialization.h"
 #include "HWDetectorConstruction.h"
 
+#ifdef G4MULTITHREADED
+#include "G4MTRunManager.hh"
+#else
 #include "G4RunManager.hh"
+#endif
 
+void visualize(int argc, char** argv) {
+    G4UIExecutive *ui = new G4UIExecutive(argc, argv);
 
-int main(int argc, char** argv) {
-    G4Random::setTheEngine(new CLHEP::RanecuEngine);
-
-    G4RunManager* runManager = new G4RunManager;  // what is there a difference between G4RunManager() and G4RunManager?
-
-    runManager->SetUserInitialization(new HWDetectorConstruction());
-
-    // Physics list
-    G4VModularPhysicsList* physicsList = new QBBC;
-    physicsList->SetVerboseLevel(1);
-    runManager->SetUserInitialization(physicsList);
-
-    runManager->SetUserInitialization(new HWActionInitialization());
-
-    runManager->Initialize();
-
-    // visualization
-    G4UIExecutive* ui = new G4UIExecutive(argc, argv);
-
-    G4VisManager* visManager = new G4VisExecutive;
+    G4VisManager *visManager = new G4VisExecutive;
     visManager->Initialize();
-    G4UImanager* uiManager = G4UImanager::GetUIpointer();
+    G4UImanager *uiManager = G4UImanager::GetUIpointer();
 
     uiManager->ApplyCommand("/control/execute init.mac");
 
     ui->SessionStart();
     delete ui;
+}
 
-//    runManager->BeamOn(10);
+
+int main(int argc, char** argv) {
+    G4Random::setTheEngine(new CLHEP::RanecuEngine);
+
+#ifdef G4MULTITHREADED
+    G4MTRunManager* runManager = new G4MTRunManager;
+#else
+    G4RunManager* runManager = new G4RunManager;
+#endif
+
+
+    HWDetectorConstruction* detectorConstruction = new HWDetectorConstruction();
+    runManager->SetUserInitialization(detectorConstruction);
+
+    G4VModularPhysicsList* physicsList = new QBBC;
+    physicsList->SetVerboseLevel(0);
+    runManager->SetUserInitialization(physicsList);
+
+    HWActionInitialization* actionInitialization = new HWActionInitialization();
+    runManager->SetUserInitialization(actionInitialization);
+
+    runManager->Initialize();
+
+    if (argc == 1) {
+        visualize(argc, argv);
+    } else {
+        runManager->BeamOn(10);
+    }
 
     delete runManager;
 

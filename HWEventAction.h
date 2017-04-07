@@ -12,16 +12,11 @@
 class HWEventAction : public G4UserEventAction{
 
 public:
-    HWEventAction():G4UserEventAction() {}
-    ~HWEventAction() {}
+    HWEventAction();
+    ~HWEventAction();
+    virtual void BeginOfEventAction(const G4Event* );
+    virtual void EndOfEventAction(const G4Event* );
 
-    virtual void BeginOfEventAction(const G4Event* ){
-        G4cout << "begin of event" << G4endl;
-    };
-
-    virtual void EndOfEventAction(const G4Event* ) {
-        G4cout << "end of event" << G4endl;
-    };
 
 
 };

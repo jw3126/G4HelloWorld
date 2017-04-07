@@ -13,16 +13,14 @@
 class HWActionInitialization: public G4VUserActionInitialization {
 
 public:
-    HWActionInitialization() : G4VUserActionInitialization(){}
-    ~HWActionInitialization() {}
-    void Build() const {
+    HWActionInitialization() ;
+    virtual ~HWActionInitialization();
 
-        SetUserAction(new HWPrimaryGeneratorAction);
-        SetUserAction(new HWEventAction);
-        SetUserAction(new HWSteppingAction);
-        SetUserAction(new HWRunAction);
 
-    }
+    virtual void Build() const;
+
+
+
 };
 
 
